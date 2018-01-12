@@ -427,7 +427,7 @@
       
         
           
-            <p>今天算是对老大当时说的‘你真正该紧张的时候应该是在上线之后’这句话小有体会。   </p>
+            <p>今天算是对老大当时说的‘真正该紧张的时候应该是在上线之后’这句话小有体会。   </p>
 <p>因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void onAttach(Context context) &#123;</span><br><span class="line">        super.onAttach(context);</span><br><span class="line">       if (context instanceof Fragment2AtyListener) &#123;</span><br><span class="line">            mFragment2AtyListener = (Fragment2AtyListener) context;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            throw new IllegalArgumentException(&quot;Activity must implements Fragment2AtyListener&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>fragment网络请求成功后调用接口方法。</p>

@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="今天算是对老大当时说的‘你真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context con">
+<meta name="description" content="今天算是对老大当时说的‘真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context cont">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Fragment中的onAttach()方法">
 <meta property="og:url" content="http://yoursite.com/2018/01/12/fragmentOnAttach/index.html">
 <meta property="og:site_name" content="Lveona&#39;s Blog">
-<meta property="og:description" content="今天算是对老大当时说的‘你真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context context) &amp;#123;        super.onAttach(conte">
+<meta property="og:description" content="今天算是对老大当时说的‘真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context context) &amp;#123;        super.onAttach(contex">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/bugly.png">
-<meta property="og:updated_time" content="2018-01-12T08:20:34.000Z">
+<meta property="og:updated_time" content="2018-01-12T08:22:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Fragment中的onAttach()方法">
-<meta name="twitter:description" content="今天算是对老大当时说的‘你真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context context) &amp;#123;        super.onAttach(conte">
+<meta name="twitter:description" content="今天算是对老大当时说的‘真正该紧张的时候应该是在上线之后’这句话小有体会。    因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。 123456789@Override    public void onAttach(Context context) &amp;#123;        super.onAttach(contex">
 <meta name="twitter:image" content="http://yoursite.com/images/bugly.png">
 
 
@@ -425,7 +425,7 @@
       
 
       
-        <p>今天算是对老大当时说的‘你真正该紧张的时候应该是在上线之后’这句话小有体会。   </p>
+        <p>今天算是对老大当时说的‘真正该紧张的时候应该是在上线之后’这句话小有体会。   </p>
 <p>因为需求，所以在项目中fragment和MainActivity的传值我用的接口回调的方式，在onAttach()中声明接口。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void onAttach(Context context) &#123;</span><br><span class="line">        super.onAttach(context);</span><br><span class="line">       if (context instanceof Fragment2AtyListener) &#123;</span><br><span class="line">            mFragment2AtyListener = (Fragment2AtyListener) context;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            throw new IllegalArgumentException(&quot;Activity must implements Fragment2AtyListener&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>fragment网络请求成功后调用接口方法。</p>
