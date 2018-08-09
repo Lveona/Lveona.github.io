@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-09T09:07:08.000Z</updated>
+  <updated>2018-08-09T10:44:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>mac部署Node.js环境安装Angular CLI</title>
     <link href="http://yoursite.com/2018/08/09/nodeAangular/"/>
     <id>http://yoursite.com/2018/08/09/nodeAangular/</id>
     <published>2018-08-09T09:07:08.000Z</published>
-    <updated>2018-08-09T09:07:08.000Z</updated>
+    <updated>2018-08-09T10:44:29.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="mac部署Node-js环境安装Angular-CLI"><a href="#mac部署Node-js环境安装Angular-CLI" class="headerlink" title="mac部署Node.js环境安装Angular CLI"></a>mac部署Node.js环境安装Angular CLI</h1><blockquote><p>安装Angular CLI，需要先安装Node.js环境。Angular官网提示node需要8.x，npm 5.x以上的版本。</p></blockquote><p>之前搭建hexo环境也需要node环境，使用homebrew安装的node环境，版本较低，所以需要卸载现有版本重新安装。</p><h3 id="删除node和npm"><a href="#删除node和npm" class="headerlink" title="删除node和npm"></a>删除node和npm</h3><pre><code>npm config get prefixcd [刚才得到的路径]cd lib &amp;&amp; rm -rf node_modulescd /usr/local/lib &amp;&amp; sudo rm -rf node*cd /usr/local/include &amp; sudo rm -rf node*brew uninstall node (如果你是通过brew安装的，才需要执行此步骤)cd /usr/local/binsudo rm -rf npmsudo rm -rf nodesudo rm -rf /usr/local/share/man/man1/node.1sudo rm -rf /usr/local/lib/dtrace/node.dsudo rm -rf ~/.npm</code></pre><h3 id="homebrew安装nvm"><a href="#homebrew安装nvm" class="headerlink" title="homebrew安装nvm"></a>homebrew安装nvm</h3><p>安装管理node版本工具有nvm、n，这里选择nvm。使用homebrew<br>进行安装。后配置环境变量，这里使用的是zsh，在.zshrc这个配置文件中配置，如果是bash，修改.bash_profile文件。</p><pre><code>homebrew install -g nvmvi ~/.zshrc , 在最后一行加上export NVM_DIR=&quot;$HOME/.nvm&quot;[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;重新启动配置source ~/.zshrc</code></pre><h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>查看可以安装node版本</p><pre><code>nvm ls-romte</code></pre><p>安装指定node版本,这里使用淘宝镜像</p><pre><code>nvm install node v8.10.0</code></pre><p><img src="http://ww1.sinaimg.cn/large/bc84935bly1fu3jnlo2qij214u0gw42q.jpg" alt=""></p><p>查看node npm版本</p><pre><code>node -vnpm -v</code></pre><h3 id="安装Angular-CLI"><a href="#安装Angular-CLI" class="headerlink" title="安装Angular CLI"></a>安装Angular CLI</h3><p>安装@angular/cli</p><pre><code>npm install -g @angular/cli</code></pre><p>查询安装的Node路径</p><pre><code>npm get prefix</code></pre><p>把刚才的路径配到你的终端配置文件中.zshrc或.bashrc</p><pre><code>alias ng=&quot;/刚才你得到的路径/lib/node_modules/@angular/cli/bin/ng&quot;</code></pre><p>使用ng命令查看</p><pre><code>ng -v</code></pre><p><img src="http://ww1.sinaimg.cn/large/bc84935bly1fu3k6i5i36j20po0ps43x.jpg" alt=""><br>如此angularcli安装完成</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>安装Angular CLI，需要先安装Node.js环境。Angular官网提示node需要8.x，npm 5.x以上的版本。</p></blockquote><p>之前搭建hexo环境也需要node环境，使用homebrew安装的node环境，版本较低，所以需要卸载现有版本重新安装。</p><h3 id="删除node和npm"><a href="#删除node和npm" class="headerlink" title="删除node和npm"></a>删除node和npm</h3><pre><code>npm config get prefixcd [刚才得到的路径]cd lib &amp;&amp; rm -rf node_modulescd /usr/local/lib &amp;&amp; sudo rm -rf node*cd /usr/local/include &amp; sudo rm -rf node*brew uninstall node (如果你是通过brew安装的，才需要执行此步骤)cd /usr/local/binsudo rm -rf npmsudo rm -rf nodesudo rm -rf /usr/local/share/man/man1/node.1sudo rm -rf /usr/local/lib/dtrace/node.dsudo rm -rf ~/.npm</code></pre><h3 id="homebrew安装nvm"><a href="#homebrew安装nvm" class="headerlink" title="homebrew安装nvm"></a>homebrew安装nvm</h3><p>安装管理node版本工具有nvm、n，这里选择nvm。使用homebrew<br>进行安装。后配置环境变量，这里使用的是zsh，在.zshrc这个配置文件中配置，如果是bash，修改.bash_profile文件。</p><pre><code>homebrew install -g nvmvi ~/.zshrc , 在最后一行加上export NVM_DIR=&quot;$HOME/.nvm&quot;[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;重新启动配置source ~/.zshrc</code></pre><h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>查看可以安装node版本</p><pre><code>nvm ls-romte</code></pre><p>安装指定node版本,这里使用淘宝镜像</p><pre><code>nvm install node v8.10.0</code></pre><p><img src="http://ww1.sinaimg.cn/large/bc84935bly1fu3jnlo2qij214u0gw42q.jpg" alt=""></p><p>查看node npm版本</p><pre><code>node -vnpm -v</code></pre><h3 id="安装Angular-CLI"><a href="#安装Angular-CLI" class="headerlink" title="安装Angular CLI"></a>安装Angular CLI</h3><p>安装@angular/cli</p><pre><code>npm install -g @angular/cli</code></pre><p>查询安装的Node路径</p><pre><code>npm get prefix</code></pre><p>把刚才的路径配到你的终端配置文件中.zshrc或.bashrc</p><pre><code>alias ng=&quot;/刚才你得到的路径/lib/node_modules/@angular/cli/bin/ng&quot;</code></pre><p>使用ng命令查看</p><pre><code>ng -v</code></pre><p><img src="http://ww1.sinaimg.cn/large/bc84935bly1fu3k6i5i36j20po0ps43x.jpg" alt=""><br>如此angularcli安装完成</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;mac部署Node-js环境安装Angular-CLI&quot;&gt;&lt;a href=&quot;#mac部署Node-js环境安装Angular-CLI&quot; class=&quot;headerlink&quot; title=&quot;mac部署Node.js环境安装Angular CLI&quot;&gt;&lt;/a&gt;mac部署
+        &lt;blockquote&gt;
+&lt;p&gt;安装Angular CLI，需要先安装Node.js环境。Angular官网提示node需要8.x，npm 5.x以上的版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前搭建hexo环境也需要node环境，使用homebrew安装的node环境
       
     
     </summary>
